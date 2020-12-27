@@ -28,6 +28,7 @@ class App extends Component {
       autoPlay: false,
       modalVisible: false,
       delay: 4,
+      visible: false,
     };
   }
 
@@ -67,7 +68,8 @@ class App extends Component {
       reset: true,
       autoPlay: false,
       modalVisible: false,
-      delay: 4
+      delay: 4,
+      visible: false
     };
     this.setState(state);
     this.componentDidMount();
@@ -85,6 +87,15 @@ class App extends Component {
   setModalVisible(modalVisible) {
     this.setState({ modalVisible });
   }
+
+  handleOk = () => {
+    this.handleReset();
+    this.setState({ visible: false });
+  };
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
 
   render() {
     return (
@@ -124,7 +135,7 @@ class App extends Component {
             <div key={'-6'}>{this.state.selected[this.state.selected.length - 6]}</div>
           </div>
 
-          <Button onClick={this.handleReset} disabled={this.state.selected.length === 0 || this.state.autoPlay === true} style={{ left: '70px' }}>Reset</Button>
+          <Button onClick={() => this.setState({visible: true})} disabled={this.state.selected.length === 0 || this.state.autoPlay === true} style={{ left: '70px' }}>Reset</Button>
 
           <Modal
             title="Select Delay"
@@ -138,6 +149,23 @@ class App extends Component {
           >
             <InputNumber min={4} max={10} value={this.state.delay} onChange={this.handleDelay} />
 
+          </Modal>
+
+          <Modal
+            visible={this.state.visible}
+            title="Reset??"
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+            footer={[
+              <Button key="back" onClick={this.handleCancel}>
+                Return
+            </Button>,
+              <Button key="submit" type="primary" onClick={this.handleOk}>
+                Submit
+            </Button>,
+            ]}
+          >
+            <p>Do you really wanna reset the game!!!</p>
           </Modal>
 
         </Sider>
