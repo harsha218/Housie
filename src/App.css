@@ -1,0 +1,86 @@
+.logo {
+  height: 32px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+.displayNumber {
+  height: 140px;
+  margin: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+.numberBox {
+  height: 45vh;
+  margin: 30px 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 9vh;
+  grid-template-rows: 8vh 8vh 8vh 8vh 8vh;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+[data-theme="dark"] .site-layout .site-layout-background {
+  background: #141414;
+}
+
+.board {
+  height: 95vh;
+  width: 95vh;
+  padding: 7.5vh 2.5vh;
+  display: grid;
+  grid-template-columns: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
+  grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
+}
+
+.item {
+  padding: 1.5vh;
+  width: 8vh;
+  height: 8vh;
+  border: 2px solid #0092ff;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 2.2vh;
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5vh;
+}
+
+.item:hover {
+  background: #e5deec;
+  cursor: pointer;
+}
+
+.itemSelected {
+  padding: 1.5vh;
+  width: 8vh;
+  height: 8vh;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 2.2vh;
+  font-weight: 500;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.5vh;
+  background: #0092ff;
+  color: #fff;
+  cursor: pointer;
+}
